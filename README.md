@@ -79,7 +79,7 @@ php artisan db:seed
 ・nginx 1.21.1
 
 ## ER図
-![ER図](public/img/erd.png)
+![ER図](src/public/img/erd.png)
 
 ## URL
 開発環境
