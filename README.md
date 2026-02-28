@@ -83,21 +83,21 @@ php artisan db:seed
 
 ## URL
 開発環境
-・商品一覧画面（トップ画面）：http://localhost/
-・商品一覧画面（トップ画面）_マイリスト：http://localhost/?tab=mylist/
-・会員登録画面：http://localhost/register/
-・ログイン画面：http://localhost/login/
-・ログアウト：(管理画面から操作/URLなし)
-・商品詳細画面：http://localhost/item/{item_id}
-・商品購入画面：http://localhost/purchase/{item_id}/
-・送付先住所変更画面：http://localhost/purchase/address/{item_id}/
-・商品出品画面：http://localhost/sell/
-・プロフィール画面：http://localhost/mypage/
-・プロフィール編集画面（設定画面）：http://localhost/mypage/profile/
-・プロフィール画面_購入した商品一覧：http://localhost/mypage?page=buy/
-・プロフィール画面_出品した商品一覧：http://localhost/mypage?page=sell/
-・検索：http://localhost/search?input=/
-・phpMyAdmin：http://localhost:8080/
+- 商品一覧画面（トップ画面）：http://localhost/
+- 商品一覧画面（トップ画面）_マイリスト：http://localhost/?tab=mylist/
+- 会員登録画面：http://localhost/register/
+- ログイン画面：http://localhost/login/
+- ログアウト：(管理画面から操作/URLなし)
+- 商品詳細画面：http://localhost/item/{item_id}
+- 商品購入画面：http://localhost/purchase/{item_id}/
+- 送付先住所変更画面：http://localhost/purchase/address/{item_id}/
+- 商品出品画面：http://localhost/sell/
+- プロフィール画面：http://localhost/mypage/
+- プロフィール編集画面（設定画面）：http://localhost/mypage/profile/
+- プロフィール画面_購入した商品一覧：http://localhost/mypage?page=buy/
+- プロフィール画面_出品した商品一覧：http://localhost/mypage?page=sell/
+- 検索：http://localhost/search?input=/
+- phpMyAdmin：http://localhost:8080/
 
 ## 今後の改善点
 - 決済機能（Stripe）の本実装
