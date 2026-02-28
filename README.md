@@ -73,10 +73,10 @@ php artisan db:seed
 ```
 
 ## 使用技術
-・PHP 8.2.11
-・Laravel ８.83.8
-・MySQL 8.0.26・
-・nginx 1.21.1
+- PHP 8.2.11
+- Laravel ８.83.8
+- MySQL 8.0.26・
+- nginx 1.21.1
 
 ## ER図
 ![ER図](src/public/img/erd.png)
