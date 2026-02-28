@@ -46,7 +46,6 @@ class ExhibitionRequest extends FormRequest
             ],
             'status_id' => [
                 'required',
-                'exists:conditions,id'
             ],
         ];
     }

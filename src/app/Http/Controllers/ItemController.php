@@ -148,8 +148,6 @@ class ItemController extends Controller
     // 商品出品保存
     public function store(ExhibitionRequest $request)
     {
-        dd($request->all());
-
         // ① 入力データ取得（画像以外）
         $itemData = $request->only([
             'name',
