@@ -1,0 +1,57 @@
+.items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* 画像とテキストの間の余白 */
+    margin: 0 auto;
+    padding: 30px;
+    }
+
+.item__img {
+    flex: 0 0 30%;
+}
+
+.item__img img{
+    width: 100%;
+    /* 画像をコンテナ内に収める */
+    height: auto;
+    display: block;}
+
+.item__detail {
+    flex: 1;
+}
+/* いいねボタン */
+.favorite-form {
+    display: inline;
+}
+.favorite-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.favorite-btn img {
+    width: 24px;
+    /* 好きなサイズに */
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.sold-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+}

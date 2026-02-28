@@ -1,0 +1,45 @@
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+
+.sold-label {
+    background-color: red;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.tab-area {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #666;
+    border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+    color: #e60073;
+    border-bottom: 2px solid #e60073;
+    font-weight: bold;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.sold-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+}
