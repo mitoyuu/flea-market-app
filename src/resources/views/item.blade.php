@@ -27,29 +27,41 @@
         <h1>{{ $item->name }}</h1>
         <p>{{ $item->brand }}</p>
         <p>¥{{ number_format($item->price) }}(税込)</p>
-        @if($item->isFavoritedBy(auth()->user()))
-        <!-- この商品は、今ログインしてる人に「いいね♡」されてる？ -->
-        <!-- {{-- すでにいいねしている → 削除 --}} -->
-        <form method="POST" action="{{ route('favorite.destroy', $item) }}">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="favorite-btn"> <img src="{{ asset('img/ハートロゴ_ピンク.png') }}" alt="いいね">
-            </button>
-        </form>
-        @else
-        <!-- {{-- まだいいねしていない → 保存 --}} -->
-        <form method="POST" action="{{ route('favorite.store', $item) }}">
-            @csrf
-            <button type="submit" class="favorite-btn"> <img src="{{ asset('img/ハートロゴ_デフォルト.png') }}" alt="いいね">
-            </button>
-        </form>
-        @endif
-        <!-- いいね数 -->
-        <p>{{ $item->favorites_count }}</p>
-        <img src="{{ asset('img/ふきだしロゴ.png') }}" alt="コメント">
-        <!-- コメント数 -->
-        <p>{{ $item->comments_count }}</p>
-        </form>
+    </div>
+    <div class="item__actions">
+
+        <!-- {{-- いいね --}} -->
+        <div class="action">
+            <!-- この商品は、今ログインしてる人に「いいね♡」されてる？ -->
+            @if($item->isFavoritedBy(auth()->user()))
+            <!-- {{-- すでにいいねしている → 削除 --}} -->
+            <form method="POST" action="{{ route('favorite.destroy', $item) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="favorite-btn">
+                    <img src="{{ asset('img/ハートロゴ_ピンク.png') }}">
+                </button>
+            </form>
+            @else
+            <!-- {{-- まだいいねしていない → 保存 --}} -->
+            <form method="POST" action="{{ route('favorite.store', $item) }}">
+                @csrf
+                <button type="submit" class="favorite-btn">
+                    <img src="{{ asset('img/ハートロゴ_デフォルト.png') }}">
+                </button>
+            </form>
+            @endif
+            <!-- いいね数 -->
+            <p>{{ $item->favorites_count }}</p>
+        </div>
+
+
+        <!-- {{-- コメント --}} -->
+        <div class="action">
+            <img src="{{ asset('img/ふきだしロゴ.png') }}">
+            <!-- コメント数 -->
+            <p>{{ $item->comments_count }}</p>
+        </div>
 
         <div class="form__button">
             <a href="/purchase/{{ $item->id }}" class="form__button-submit">購入手続きへ</a>

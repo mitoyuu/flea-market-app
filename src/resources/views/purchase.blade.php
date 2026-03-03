@@ -15,6 +15,7 @@
 
             <!-- 左側 -->
             <div class="purchase-left">
+                <!-- /* 画像 */ -->
                 <div class="image-wrapper">
                     @if(Str::startsWith($item->img, 'items/'))
                     <!-- 自分で出品した画像（storage保存） -->
@@ -25,9 +26,11 @@
                     @endif
                 </div>
 
+                <!-- 商品名 -->
                 <div class="item__detail">
                     <h1>{{ $item->name }}</h1>
-                    <p>¥{{ number_format($item->price) }}(税込)</p>
+                    <!-- 価格 -->
+                    <div class="price">¥{{ number_format($item->price) }}(税込)</div>
 
                     <!-- 支払い方法 -->
                     <div class="form__group">
@@ -51,56 +54,54 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            <!-- 配送先 -->
-                            <div class="form__group">
-                                <div class="form__group-title">
-                                    <span class="form__label--item">配送先</span>
-                                </div>
-                                <div class="form__button">
-                                    <a href="/purchase/address/{{ $item->id }}" class="form__button-submit">変更する</a>
-                                </div>
-                                <div class="form__group-content">
-                                    <div class="form__input--text">
-                                        <p>〒 {{ $user->post_code }}</p>
-                                        <p>{{ $user->address }}{{ $user->building }}
-                                        </p>
-                                        <input type="hidden" name="address" value="{{ $user->address }}">
-                                        <div class="form__error">
-                                            @error('address')
-                                            {{ $message }}
-                                            @enderror
-                                        </div>
+                        </div>
+                    <!-- 配送先 -->
+                    <div class="form__group">
+                            <div class="form__group-title">
+                                <span class="form__label--item">配送先</span>
+                            </div>
+                            <div class="edit__button">
+                                <a href="/purchase/address/{{ $item->id }}" class="edit__button-submit">変更する</a>
+                            </div>
+                            <div class="form__group-content">
+                                <div class="form__input--text">
+                                    <p>〒 {{ $user->post_code }}</p>
+                                    <p>{{ $user->address }}{{ $user->building }}
+                                    </p>
+                                    <input type="hidden" name="address" value="{{ $user->address }}">
+                                    <div class="form__error">
+                                        @error('address')
+                                        {{ $message }}
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- 右側（小計） -->
-                    <div class="purchase-right">
-                        <div class="summary-box">
-                            <div class="summary-row">
-                                <span>商品代金</span>
-                                <span>¥{{ number_format($item->price) }}</span>
-                            </div>
+                </div>
+                <!-- 右側（小計） -->
+                <div class="purchase-right">
+                    <div class="summary-box">
+                        <div class="summary-row">
+                            <span>商品代金</span>
+                            <span>¥{{ number_format($item->price) }}</span>
+                        </div>
 
-                            <hr>
+                        <hr>
 
-                            <div class="summary-row">
-                                <span>支払い方法</span>
-                                <span>{{ $payment_method->content }}</span>
-                            </div>
-                            <!-- <button type="submit" class="purchase-button">
-                        購入する
-                    </button> -->
-                            <div class="form__button">
+                        <div class="summary-row">
+                            <span>支払い方法</span>
+                            <span>{{ $payment_method->content }}</span>
+                        </div>
+                        <button type="submit" class="purchase-button">購入する</button>
+                        <!-- <div class="form__button">
                                 <button class="form__button-submit" type="submit">
                                     購入する
                                 </button>
-                            </div>
-                        </div>
+                            </div> -->
                     </div>
                 </div>
+            </div>
     </form>
 </div>
 

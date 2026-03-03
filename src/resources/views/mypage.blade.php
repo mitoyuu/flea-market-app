@@ -21,31 +21,36 @@
         </div>
     </div>
     <div class="tab-area">
-
-        {{-- 出品した商品 --}}
+        <!-- 出品した商品 -->
         <a href="{{ url('/mypage?page=sell') }}"
             class="tab {{ $page === 'sell' ? 'active' : '' }}">
             出品した商品
         </a>
 
-        {{-- 購入した商品 --}}
+        <!-- 購入した商品 -->
         <a href="{{ url('/mypage?page=buy') }}"
             class="tab {{ $page === 'buy' ? 'active' : '' }}">
             購入した商品
         </a>
-
     </div>
     <div class="items">
         @foreach ($items as $item)
         <div class="item">
             <a href="{{ route('item.show', $item->id) }}">
-                @if(Str::startsWith($item->img, 'items/'))
-                <!-- 自分で出品した画像（storage保存） -->
-                <img src="{{ asset('storage/' . $item->img) }}" alt="{{ $item->name }}" width="350">
-                @else
-                <!-- シーダーで登録した画像用 -->
-                <img src="{{ asset($item->img) }}" alt="{{ $item->name }}" width="350">
-                @endif
+                <!-- 商品画像 -->
+                <div class="image-wrapper">
+                    @if(Str::startsWith($item->img, 'items/'))
+                    <!-- 自分で出品した画像（storage保存） -->
+                    <img src="{{ asset('storage/' . $item->img) }}" alt="{{ $item->name }}" >
+                    @else
+                    <!-- シーダーで登録した画像用 -->
+                    <img src="{{ asset($item->img) }}" alt="{{ $item->name }}">
+                    @endif
+                    <!-- 売却済みラベル -->
+                    @if ($item->buyer_id)
+                    <div class="sold-label">Sold</div>
+                    @endif
+                </div>
             </a>
             <p>{{ $item->name }}</p>
         </div>

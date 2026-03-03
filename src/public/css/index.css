@@ -1,39 +1,59 @@
+/* <!-- 商品一覧画面 --> */
+
+/* 商品全体の箱 */
 .items {
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* ← 4列 */
+    gap: 40px;
+    /* ← 画像の間の隙間 */
+    margin: 40px;
 }
 
-.sold-label {
-    background-color: red;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: bold;
-}
+/* タブエリア */
 .tab-area {
     display: flex;
     gap: 16px;
-    margin-bottom: 20px;
 }
 
+/* タブ */
 .tab {
-    padding: 8px 16px;
+    padding: 25px 20px 5px 100px;
     text-decoration: none;
     color: #666;
-    border-bottom: 2px solid transparent;
+    /* border-bottom: 2px solid transparent; */
 }
 
+/* タブ選択時に赤色 */
 .tab.active {
-    color: #e60073;
-    border-bottom: 2px solid #e60073;
+    color: red;
     font-weight: bold;
 }
 
-.image-wrapper {
-    position: relative;
+hr {
+    margin: 5px 0 40px 0;
 }
 
+ /* 商品カード */
+.item {
+    text-align: left;
+}
+
+/* 商品画像 */
+.image-wrapper {
+    position: relative; /* SOLDの親 */
+    width: 100%;
+    aspect-ratio: 1 / 1;/* ← 正方形にする */
+    overflow: hidden; /* ← はみ出た部分を隠す */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* ← 自動でいい感じにトリミング */
+}
+
+/* SOLDラベル */
 .sold-label {
     position: absolute;
     top: 10px;
@@ -43,3 +63,5 @@
     padding: 5px 10px;
     font-weight: bold;
 }
+
+

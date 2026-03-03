@@ -25,7 +25,7 @@
                     <input type="hidden" name="tab" value="mylist">
                     @endif -->
                 </form>
-                <nav>
+                <!-- <nav>
                     <ul class="header-nav">
                         <li class="header-nav__item">
                             <a class="header-nav__link" href="/mypage">マイページ</a>
@@ -38,6 +38,24 @@
                             <a class="header-nav__link" href="/sell">出品</a>
                         </li>
                         @endif
+                    </ul>
+                </nav> -->
+                <nav>
+                    <ul class="header-nav">
+                        <li>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button class="header-nav__button">ログアウト</button>
+                            </form>
+                        </li>
+
+                        <li>
+                            <a class="header-nav__link" href="/mypage">マイページ</a>
+                        </li>
+
+                        <li>
+                            <a class="header-nav__link sell-btn" href="/sell">出品</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

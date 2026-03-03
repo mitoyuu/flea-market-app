@@ -2,16 +2,46 @@
     background: #000;
 }
 
+/* .header__inner {
+    padding: 20px 20px;
+    /* 端ギリギリすぎない程度に */
+/* } */
 .header__inner {
+    max-width: 1400px;
+    /* 要件を意識 */
     margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
+    /* 中央寄せ */
+    padding: 20px 40px;
+    /* ← 左右の余白はここ */
 }
 
-.header-utilities {
+
+/* .header-utilities {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* 縦中央 */
+    /* gap: 60px; */
+    /* ロゴと検索の間 */
+/* } */
+
+.header-utilities {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+.header-utilities img {
+    justify-self: start;
+    /* 左 */
+}
+
+.search-form {
+    justify-self: center;
+    /* 中央 */
+}
+
+.header-utilities nav {
+    justify-self: end;
+    /* 右 */
 }
 
 .header__logo {
@@ -20,15 +50,24 @@
     font-weight: bold;
     font-size: 24px;
 }
-
+/*
 .header-utilities nav {
     width: 18%;
-}
+} */
+/* .header-utilities nav {
+    margin-left: auto;
+} */
 
-.header-nav {
+/* .header-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+} */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* メニュー同士の間隔 */
 }
 
 .header-nav__link {
@@ -42,4 +81,21 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+}
+
+/* 検索欄 */
+.search-form input {
+    width: 300px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    margin: 0 auto;
+}
+
+/* 出品ボタンを白ボタンにする */
+.sell-btn {
+    background: #fff;
+    color: #000;
+    padding: 6px 16px;
+    border-radius: 4px;
 }

@@ -1,82 +1,183 @@
+/* =========================
+   全体レイアウト
+========================= */
+
 .item-sell__content {
+    max-width: 800px;
     margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
+    padding: 60px 40px;
 }
 
 .item-sell__heading {
-    margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 40px;
 }
 
-/* .form {
-    margin: 0 auto;
-    width: 25%;
-    text-align: center;
-} */
+.item-sell__heading h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* =========================
+   共通フォーム
+========================= */
 
 .form__group {
-    margin-bottom: 5px;
+    margin-bottom: 40px;
 }
 
-.form__group-title {
-    text-align: left;
+.form__label--item {
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 15px;
 }
 
-.form__error {
-    height: 20px;
-    color: #ff0000;
-    text-align: left;
+/* =========================
+   画像アップロード
+========================= */
+
+.form__image {
+    border: 2px dashed #ccc;
+    padding: 40px;
+    text-align: center;
+    border-radius: 6px;
+    background: #fafafa;
 }
 
-.form__input--text input {
-    padding: 10px;
-    width: 100%;
-    height: 40px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-
-    appearance: none;
-}
-
-.form__button {
-    margin-top: 20px;
-}
-
-.form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    background: #000;
-    color: #fff;
+.form__image-select {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #ff4b4b;
+    border-radius: 6px;
+    color: #ff4b4b;
     cursor: pointer;
-}
-
-.category {
-    display: flex;
-    column-count: 2;
-    border: none;
-    border-radius: 30;
-    color: #e96f64;
+    font-size: 14px;
 }
 
 .form__image-select input {
     display: none;
 }
 
-.form__image-select {
-    border: 2px solid #ff5a5a;
-    color: #ff5a5a;
-    padding: 8px 16px;
-    border-radius: 5px;
+.form__image-select:hover {
+    background: #ff4b4b;
+    color: white;
+    transition: 0.3s;
+}
+
+/* =========================
+   セクション見出し（商品の詳細など）
+========================= */
+
+.form__group-title>.form__label--item {
+    font-size: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   カテゴリーチップ
+========================= */
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.category-item {
+    position: relative;
+}
+
+.category-item input {
+    display: none;
+}
+
+.category-item span {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #ff4b4b;
+    color: #ff4b4b;
+    font-size: 14px;
     cursor: pointer;
 }
 
-.form__image-preview {
-    width: 120px;
+.category-item input:checked+span {
+    background: #ff4b4b;
+    color: white;
+}
+
+/* =========================
+   セレクトボックス
+========================= */
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* =========================
+   テキスト入力
+========================= */
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+textarea {
     height: 120px;
-    background: #ddd;
-    border-radius: 50%;
+    resize: none;
+}
+
+/* =========================
+   価格欄（¥付きにする場合）
+========================= */
+
+.form__input--text input[name="price"] {
+    padding-left: 25px;
+}
+
+/* =========================
+   エラーメッセージ
+========================= */
+
+.form__error {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* =========================
+   出品ボタン
+========================= */
+
+.form__button {
+    margin-top: 50px;
+}
+
+.form__button-submit {
+    width: 100%;
+    padding: 14px;
+    background: #ff4b4b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form__button-submit:hover {
+    opacity: 0.8;
+    transition: 0.3s;
 }
