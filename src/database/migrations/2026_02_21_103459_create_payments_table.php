@@ -18,7 +18,6 @@ class CreatePaymentsTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('item_id')->constrained();
             $table->foreignId('payment_method_id')->constrained();
-            $table->integer('amount')->after('payment_method_id');
             $table->timestamps();
         });
     }
